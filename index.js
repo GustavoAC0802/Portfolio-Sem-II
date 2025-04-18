@@ -8,8 +8,8 @@ app.get("/", (req, res) => {
     res.render("index");
 });
 
-app.get("/projeto", (req, res) => {
-    res.render("projeto");  
+app.get("/habilidades", (req, res) => {
+    res.render("habilidades");  
 });
 
 app.listen(3000, () => {

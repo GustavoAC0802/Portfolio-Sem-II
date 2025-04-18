@@ -5,35 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Saira&display=swap" rel="stylesheet">
-
-    <title>Document</title>
+    <title>Home</title>
 </head>
 
 <body>
-    <div>
-        <section class="aboutme">
-            <div class="box b1">
-                <div class="info-box">
-                    <img class="MyIMG" src="/images/Eu.jpg" alt="">
-                    <div class="info-texto">
-                        <h1 class="title">Bem-Vindo(a)!</h1>
-                        <p class="text">Olá! Me chamo Gustavo Almeida Camargo, atualmente estou cursando Desenvolvimento
-                            de
-                            Software
-                            Multiplataforma pela Fatec, e Jogos Digitais pela Anhanguera, ambas estou no Segundo
-                            Semestre. Estou sempre buscando aprender mais sobre o universo da programação, uma das
-                            linguagens a qual mais gosto é C#!</p>
-                        <p class="text">Aqui no meu portfólio, você poderá conhecer um pouco mais sobre mim, conhecendo
-                            minhas habilidades, projetos e muito mais! E caso queira entrar em contato comigo, no final
-                            deixei disponiveis algumas formas de contato. Obrigado!</p>
-                        <div class="btn-container">
-                            <a class="btn">Baixar Curriculo</a>
-                            <a href="/projeto" class="btn">Prosseguir</a>
-                        </div>
-                    </div>
+    <div class="all">
+        <%- include('partials/header') %>
+        <section class="AboutMe">
+            <div class="Box">
+                <img src="/images/Eu.jpg" alt="" class="myimg">
+                <h1 class="titles">Bem-Vindo(a)!</h1>
+                <div class="info-texto">
+                    <p class="text">Olá! Me chamo Gustavo Almeida Camargo, atualmente estou cursando Desenvolvimento
+                        de
+                        Software
+                        Multiplataforma pela Fatec, e Jogos Digitais pela Anhanguera, ambas estou no Segundo
+                        Semestre. Estou sempre buscando aprender mais sobre o universo da programação, uma das
+                        linguagens a qual mais gosto é C#!</p>
+                    <p class="text">Aqui no meu portfólio, você poderá conhecer um pouco mais sobre mim, conhecendo
+                        minhas habilidades, projetos e muito mais! E caso queira entrar em contato comigo, no final
+                        deixei disponiveis algumas formas de contato. Obrigado!</p>
                 </div>
+
+                <div class="btn-container">
+                    <a class="btn">Baixar Curriculo</a>
+                    <a href="/habilidades" class="btn">Prosseguir</a>
+                </div>
+
             </div>
         </section>
     </div>

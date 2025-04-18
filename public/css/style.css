@@ -1,89 +1,71 @@
-body {
-    background-color: #242424;
-    margin: 0;
+* {
+    margin: 0px;
     padding: 0;
 }
 
-* {
-    box-sizing: border-box;
+body {
+    background-color: #242424;
 }
 
-p,
-h1,
-h2 {
+.titles {
     font-family: "Saira", sans-serif;
-    text-align: justify;
-}
-
-.title {
-    font-size: 30px;
+    font-size: 25px;
+    margin-top: 15px;
 }
 
 .text {
-    font-size: 25px;
+    font-family: "Saira", sans-serif;
+    font-size: 18px;
 }
 
-/* Primeira Sessão */
+/* Projeto */
 
-.aboutme {
+.all {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    /* Centraliza verticalmente */
 }
 
-.MyIMG {
-    height: 225px;
-    width: 225px;
-    border-radius: 50%;
-    box-shadow: 0px 0px 5px#a259ff;
-    object-fit: cover;
+.AboutMe {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-.box {
+.Box {
+    max-width: 1000px;
     text-align: center;
     color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px #a259ff;
     background-color: #313030;
-}
-
-.b1 {
-    max-width: 1200px;
-    padding: 30px;
-    background-color: #2d2c2c;
-    border: 1px solid #a259ff;
-    border-radius: 15px;
-    box-shadow: 0 0 15px #a259ff66;
-    font-family: 'Saira', sans-serif;
-}
-
-.info-box {
-    display: flex;
-    align-items: center;
-    gap: 40px;
     flex-wrap: wrap;
-    /* Para manter responsivo */
+}
+
+.myimg {
+    height: 225px;
+    width: 225px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px #a259ff;
 }
 
 .info-texto {
-    flex: 1;
-    color: white;
+    text-align: center;
 }
-
 
 .btn-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    /* Aqui você controla o espaçamento entre os botões */
+    gap: 15px;
     margin-top: 20px;
-    /* Espaço acima dos botões */
 }
 
 .btn {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     padding: 1rem;
     text-decoration: none;
     background-color: #2D2C2C;
@@ -92,7 +74,7 @@ h2 {
     font-family: "Saira", sans-serif;
     color: #EAEAEA;
     letter-spacing: 0.3rem;
-    font-weight: 600;
+    font-weight: 300;
     border: 1px solid #a259ff;
     transition: 0.3s ease;
     cursor: pointer;
@@ -109,75 +91,50 @@ h2 {
 
 /* Responsividade */
 
-@media screen and (min-width: 320px) and (max-width: 345px) {
-    .title {
-        font-size: 15px;
+@media screen and (min-width: 320px) and (max-width: 375px) {
+    .titles {
+        font-size: 17px;
+        margin-top: 10px;
     }
 
     .text {
         font-size: 12px;
-    }
-
-    /* Primeira Sessão */
-
-    .aboutme {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: auto; 
         padding: 10px;
-        box-sizing: border-box;
-        text-align: center;
-    }
-
-    .MyIMG {
-        height: 115px;
-        width: 115px;
-    }
-
-    .box {
-        text-align: center;
-        color: white;
-        padding: 10px;
-    }
-
-    .b1 {
-        max-width: 320px;
-        padding: 10px;
-    }
-
-    .info-box {
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        flex-wrap: wrap;
-        /* Para manter responsivo */
     }
 
     .info-texto {
-        flex: 1;
-        color: white;
+        text-align: justify;
     }
 
-
-    .btn-container {
-        display: flex;
-        justify-content: center;
-
-        gap: 10px;
-        /* Aqui você controla o espaçamento entre os botões */
+    .myimg {
         margin-top: 10px;
-        /* Espaço acima dos botões */
+        height: 115px;
+        width: 115px;
+        ;
+    }
+
+    .Box {
+        width: 100%;
+        max-width: 310px;
+        padding: 2px;
     }
 
     .btn {
+        height: 20px;
+        width: 100px;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 12px;
-        font-weight: 200;
-        margin-top: 10px;
-        height: 50px;
+        text-align: center;
     }
+
+    .btn-container{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .btn-container a{
+        font-size: 12px;
+    }
+
 }
