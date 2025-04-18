@@ -1,0 +1,67 @@
+<div class="menu-container">
+    <div class="menu toggle-wrapper" onclick="toggleMenu()">
+        <div class="menu-toggle">
+            ☰
+        </div>
+        <div class="menu-options hidden">
+            <a href="/"><i class="fa fa-home"></i></a>
+            <a href="#habilidades"><i class="fas fa-tools"></i></a>
+            <a href="#"><i class="fas fa-project-diagram"></i></a>
+            <a href="#"><i class="fas fa-laptop-code"></i></a>
+            <a href="#"><i class="fa fa-user"></i></a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleMenu() {
+        const menu = document.querySelector('.menu-options');
+        const wrapper = document.querySelector('.toggle-wrapper');
+
+        if (menu.classList.contains('hidden')) {
+            menu.classList.remove('hidden');
+            menu.classList.add('show');
+
+            wrapper.classList.remove('glow-border-close');
+            wrapper.classList.add('glow-border-open');
+        } else {
+            menu.classList.remove('show');
+            menu.classList.add('hidden');
+
+            wrapper.classList.remove('glow-border-open');
+            wrapper.classList.add('glow-border-close');
+        }
+
+        // Fecha o menu ao clicar em algum link
+        const links = menu.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('show');
+                menu.classList.add('hidden');
+
+                wrapper.classList.remove('glow-border-open');
+                wrapper.classList.add('glow-border-close');
+            });
+        });
+    }
+</script>
+
+
+<script>
+    let lastScrollTop = 0;
+    const menuContainer = document.querySelector('.menu-container');
+
+    window.addEventListener('scroll', function () {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+            // Rolando para baixo → esconder
+            menuContainer.style.top = '-100px'; // sobe o menu para fora da tela
+        } else {
+            // Rolando para cima → mostrar
+            menuContainer.style.top = '20px'; // volta para a posição original
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // previne valores negativos
+    }, false);
+</script>

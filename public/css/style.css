@@ -1,0 +1,183 @@
+body {
+    background-color: #242424;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+p,
+h1,
+h2 {
+    font-family: "Saira", sans-serif;
+    text-align: justify;
+}
+
+.title {
+    font-size: 30px;
+}
+
+.text {
+    font-size: 25px;
+}
+
+/* Primeira Sessão */
+
+.aboutme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.MyIMG {
+    height: 225px;
+    width: 225px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px#a259ff;
+    object-fit: cover;
+}
+
+.box {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #a259ff;
+    background-color: #313030;
+}
+
+.b1 {
+    max-width: 1200px;
+    padding: 30px;
+    background-color: #2d2c2c;
+    border: 1px solid #a259ff;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #a259ff66;
+    font-family: 'Saira', sans-serif;
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    /* Para manter responsivo */
+}
+
+.info-texto {
+    flex: 1;
+    color: white;
+}
+
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* Aqui você controla o espaçamento entre os botões */
+    margin-top: 20px;
+    /* Espaço acima dos botões */
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem;
+    text-decoration: none;
+    background-color: #2D2C2C;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: "Saira", sans-serif;
+    color: #EAEAEA;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 1px solid #a259ff;
+    transition: 0.3s ease;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    transform: scale3d(1.03);
+    background: #9b5de5;
+    border: 1px solid #a259ff;
+    color: #0A0A0A;
+    box-shadow: 0 0 25px #9b5de5;
+}
+
+/* Responsividade */
+
+@media screen and (min-width: 320px) and (max-width: 345px) {
+    .title {
+        font-size: 15px;
+    }
+
+    .text {
+        font-size: 12px;
+    }
+
+    /* Primeira Sessão */
+
+    .aboutme {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto; 
+        padding: 10px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .MyIMG {
+        height: 115px;
+        width: 115px;
+    }
+
+    .box {
+        text-align: center;
+        color: white;
+        padding: 10px;
+    }
+
+    .b1 {
+        max-width: 320px;
+        padding: 10px;
+    }
+
+    .info-box {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        /* Para manter responsivo */
+    }
+
+    .info-texto {
+        flex: 1;
+        color: white;
+    }
+
+
+    .btn-container {
+        display: flex;
+        justify-content: center;
+
+        gap: 10px;
+        /* Aqui você controla o espaçamento entre os botões */
+        margin-top: 10px;
+        /* Espaço acima dos botões */
+    }
+
+    .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 200;
+        margin-top: 10px;
+        height: 50px;
+    }
+}
