@@ -610,7 +610,7 @@
         .links {
             font-size: 14px;
         }
-
+        
         .cursos {
             display: flex;
             flex-direction: column;
@@ -618,6 +618,7 @@
             /* espaço entre os itens */
             margin-bottom: 15px;
             margin-top: 250px;
+            padding-right: 0px;
         }
 
         .Course {
@@ -627,7 +628,7 @@
             justify-content: center;
             width: 90%;
             /* você pode ajustar isso conforme necessário */
-            max-width: 350px;
+            max-width: 340px;
             /* opcional: limite da largura de cada curso */
         }
 
@@ -666,7 +667,7 @@
             height: auto;
             border: 2px solid #313030;
             border-radius: 10px;
-            padding: 5px;
+            padding: 10px;
         }
     
         .topo {
@@ -1063,4 +1064,230 @@
             padding: 5px;
         }
 
+        .contato {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            height: 100dvh;
+            margin-top: 15px;
+        }
+    
+        .Cont {
+            width: 90%;
+            max-width: 750px;
+            height: auto;
+            border: 2px solid #313030;
+            border-radius: 10px;
+            padding: 5px;
+        }
+    
+        .topo {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+    
+        .TImg {
+            width: 28px;
+            height: 28px;
+        }
+    
+        .email-btn {
+            padding: 10px 20px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+    
+        .git-btn {
+            padding: 10px 18px;
+            margin-top: 20px;
+        }
+    
+        .linkd-btn {
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+    
+        .conte {
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        .python-btn{
+            padding: 10px 20px;
+            margin-top: 18px;
+        }
+
     }
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    .titles {
+        font-size: 25px;
+    }
+
+    .text {
+        font-size: 17px;
+    }
+
+    .Box {
+        max-width: auto;
+        width: 90%;
+        padding: 8px;
+        flex-wrap: wrap;
+    }
+
+    .badge {
+        padding: 6px 9px;
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    .icon {
+        height: 20px;
+        width: 20px;
+    }
+
+    .projects {
+        margin-top: 275px;
+    }
+
+    .Proj {
+        max-width: auto;
+        width: 90%;
+        flex-wrap: wrap;
+    }
+
+    .pj1 {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        gap: 7px;
+    }
+
+    .imgp {
+        height: 105px;
+        width: 105px;
+        margin-top: 14px;
+        margin-bottom: 14px;
+    }
+
+    .imgp1 {
+        height: 100px;
+        width: 135px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+
+    .imgp2 {
+        height: 115px;
+        width: 90px;
+        margin-top: 14px;
+        margin-bottom: 14px;
+    }
+
+    .links {
+        font-size: 15px;
+    }
+
+    .cursos {
+        display: flex;
+        flex-direction: column;
+        column-gap: 10px;
+        /* espaço entre os itens */
+        margin-bottom: 15px;
+        margin-top: 375px;
+    }
+
+    .Course {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0px;
+        width: auto;
+        /* você pode ajustar isso conforme necessário */
+        max-width: auto;
+        /* opcional: limite da largura de cada curso */
+    }
+
+    .TitleC {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* isso empilha os itens verticalmente */
+    }
+
+    .badgeC {
+        padding: 6px 6px;
+        margin: 4px;
+        font-size: 15px;
+        height: auto;
+    }
+
+    .iconC {
+        height: 15px;
+        width: 15px;
+        padding: 5px;
+    }
+
+    .contato {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+        height: 100dvh;
+        margin-top: 15px;
+    }
+
+    .Cont {
+        width: 90%;
+        max-width: 750px;
+        height: auto;
+        border: 2px solid #313030;
+        border-radius: 10px;
+        padding: 5px;
+    }
+
+    .topo {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .TImg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .email-btn {
+        padding: 10px 20px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    .git-btn {
+        padding: 10px 18px;
+        margin-top: 20px;
+    }
+
+    .linkd-btn {
+        padding: 10px 20px;
+        margin-top: 10px;
+    }
+
+    .conte {
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    .python-btn{
+        padding: 10px 20px;
+        margin-top: 18px;
+    }
+}
