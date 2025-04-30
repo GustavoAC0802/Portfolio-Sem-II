@@ -7,7 +7,7 @@ app.use(express.static('public'));
 app.get("/", (req, res) => {
     var nome = 'Gustavo Almeida Camargo';
     var lang = 'C#';
-    var faculdade = 'FATEC';
+    var faculdade = 'FATEC - SJC';
     var facul = 'Anhanguera'; 
 
     res.render("index", {
