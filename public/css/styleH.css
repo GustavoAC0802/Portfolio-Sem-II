@@ -330,6 +330,14 @@
         align-content: center;
     }
 
+    .Cont-BTN{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
 
     @keyframes float {
         0% {

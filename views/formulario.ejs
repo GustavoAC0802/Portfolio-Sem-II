@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen relative">
+
+  <!-- Botão de Voltar -->
+  <a href="/projeto" class="absolute top-4 left-4 text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded shadow">
+    Voltar
+  </a>
+
+  <!-- Formulário -->
+  <form id="formulario" class="bg-gray-800 p-8 rounded shadow-md w-full max-w-md space-y-4">
+    <h1 class="text-2xl font-bold text-center mb-4">Formulário de Contato</h1>
+
+    <div>
+      <label for="nome" class="block mb-1">Nome</label>
+      <input type="text" id="nome" name="nome" class="w-full p-2 rounded bg-gray-700 border border-gray-600" required>
+    </div>
+
+    <div>
+      <label for="email" class="block mb-1">Email</label>
+      <input type="email" id="email" name="email" class="w-full p-2 rounded bg-gray-700 border border-gray-600" required>
+    </div>
+
+    <div>
+      <label for="assunto" class="block mb-1">Assunto</label>
+      <textarea id="assunto" name="assunto" rows="4" maxlength="750"
+        class="w-full p-2 rounded bg-gray-700 border border-gray-600 resize-y" required></textarea>
+      <p class="text-sm text-gray-400 mt-1"><span id="contador">750</span> caracteres restantes</p>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded font-semibold">
+        Enviar
+      </button>
+    </div>
+
+    <!-- Notificação -->
+    <div id="mensagem-sucesso" class="hidden text-green-400 text-center font-medium mt-4">
+      Mensagem enviada com sucesso!
+    </div>
+  </form>
+
+  <!-- Script do contador e envio -->
+  <script>
+    const formulario = document.getElementById("formulario");
+    const sucesso = document.getElementById("mensagem-sucesso");
+    const textarea = document.getElementById("assunto");
+    const contador = document.getElementById("contador");
+    const limite = 750;
+
+    // Atualizar contador de caracteres
+    textarea.addEventListener("input", () => {
+      const restante = limite - textarea.value.length;
+      contador.textContent = restante;
+    });
+
+    // Enviar via fetch e mostrar notificação
+    formulario.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(formulario);
+      const dados = {
+        nome: formData.get("nome"),
+        email: formData.get("email"),
+        assunto: formData.get("assunto")
+      };
+
+      const resposta = await fetch("/formulario", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dados)
+      });
+
+      if (resposta.ok) {
+        sucesso.classList.remove("hidden");
+        formulario.reset();
+        contador.textContent = limite;
+        setTimeout(() => {
+          sucesso.classList.add("hidden");
+        }, 4000);
+      } else {
+        alert("Erro ao enviar a mensagem.");
+      }
+    });
+  </script>
+  <script src="/js/mensagens.js"></script>
+
+
+</body>
+</html>

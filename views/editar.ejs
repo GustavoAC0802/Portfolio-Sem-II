@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen relative">
+  <form action="/editar/<%= mensagem.id %>" method="POST" class="bg-gray-800 p-8 rounded shadow-md w-full max-w-md space-y-4">
+    <h1 class="text-2xl font-bold text-center mb-4">Edição de Mensagens</h1>
+
+    <div>
+      <label for="nome" class="block mb-1">Nome</label>
+      <input name="nome" value="<%= mensagem.nome %>" class="w-full p-2 rounded bg-gray-700 border border-gray-600" required ...>
+    </div>
+
+    <div>
+      <label for="email" class="block mb-1">Email</label>
+      <input type="email" value="<%= mensagem.email %>" class="w-full p-2 rounded bg-gray-700 border border-gray-600" required ...>
+    </div>
+
+    <div>
+      <label for="assunto" class="block mb-1">Assunto</label>
+      <textarea name="assunto" maxlength="750" class="w-full p-2 rounded bg-gray-700 border border-gray-600 resize-y" required><%= mensagem.assunto %></textarea>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded font-semibold">
+        Salvar
+      </button>
+    </div>
+  </form>
+
+    <script>
+    const formulario = document.getElementById("formulario");
+    const sucesso = document.getElementById("mensagem-sucesso");
+    const textarea = document.getElementById("assunto");
+    const contador = document.getElementById("contador");
+    const limite = 750;
+
+    // Atualizar contador de caracteres
+    textarea.addEventListener("input", () => {
+      const restante = limite - textarea.value.length;
+      contador.textContent = restante;
+    });
+
+    // Enviar via fetch e mostrar notificação
+    formulario.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(formulario);
+      const dados = {
+        nome: formData.get("nome"),
+        email: formData.get("email"),
+        assunto: formData.get("assunto")
+      };
+
+      const resposta = await fetch("/formulario", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dados)
+      });
+
+      if (resposta.ok) {
+        sucesso.classList.remove("hidden");
+        formulario.reset();
+        contador.textContent = limite;
+        setTimeout(() => {
+          sucesso.classList.add("hidden");
+        }, 4000);
+      } else {
+        alert("Erro ao enviar a mensagem.");
+      }
+    });
+  </script>
+</body>
+
+</html>
