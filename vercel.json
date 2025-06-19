@@ -1,25 +1,15 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "api/index.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/",
-        "dest": "api/index.js"
-      },
-      {
-        "src": "/projeto",
-        "dest": "api/index.js"
-      },
-      {
-        "src": "/(css|docs|images)/.*",
-        "headers": {
-          "cache-control": "max-age=31536000"
-        }
-      }
-    ]
-  }  
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "api/index.js"
+    }
+  ]
+}

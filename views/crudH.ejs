@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Nova Habilidade</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen relative">
+
+  <!-- Botão de Voltar -->
+  <a href="/habilidades"
+    class="absolute top-4 left-4 text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded shadow">
+    Voltar
+  </a>
+
+  <!-- Formulário -->
+  <form action="/habilidades/nova" method="POST" class="bg-gray-800 p-8 rounded shadow-md w-full max-w-md space-y-4">
+    <h1 class="text-2xl font-bold text-center mb-4">Nova Habilidade</h1>
+
+    <div>
+      <label for="nome" class="block mb-1">Nome da Habilidade</label>
+      <input type="text" id="nome" name="nome" class="w-full p-2 rounded bg-gray-700 border border-gray-600" required>
+    </div>
+
+    <div>
+      <label for="categoria" class="block mb-1">Categoria</label>
+      <select id="categoria" name="categoria" class="w-full p-2 rounded bg-gray-700 border border-gray-600" required>
+        <option value="">Selecione</option>
+        <option value="Programação">Programação</option>
+        <option value="Ferramentas">Ferramentas</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="icone" class="block mb-1">Caminho ou URL do Ícone</label>
+      <input type="text" id="icone" name="icone" class="w-full p-2 rounded bg-gray-700 border border-gray-600" required>
+      <p class="text-sm text-gray-400 mt-1">Ex: <code>/images/react.png</code> ou URL externa</p>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded font-semibold">
+        Salvar Habilidade
+      </button>
+    </div>
+
+    <% if (typeof sucesso !=='undefined' && sucesso) { %>
+      <div id="mensagem-sucesso" class="text-green-400 text-center font-medium mt-4">
+        Habilidade cadastrada com sucesso!
+      </div>
+      <% } %>
+
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Habilidades Cadastradas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-start p-6">
+  
+  <!-- Botão de voltar -->
+  <div class="w-full flex justify-start mb-6">
+    <a href="/" class="text-sm bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded">
+      Voltar
+    </a>
+  </div>
+
+  <h1 class="text-3xl font-bold mb-8 text-center">Habilidades Cadastradas</h1>
+
+  <% if (habilidades.length === 0) { %>
+    <p class="text-gray-400">Nenhuma habilidade cadastrada.</p>
+  <% } else { %>
+    <div class="w-full max-w-4xl space-y-6">
+      <% habilidades.forEach(h => { %>
+        <div class="bg-gray-800 rounded-lg p-6 shadow-md flex flex-col md:flex-row items-center justify-between gap-4">
+          
+          <!-- Ícone + Nome + Categoria -->
+          <div class="flex items-center gap-4">
+            <img src="<%= h.icone %>" alt="<%= h.nome %>" class="w-12 h-12 rounded shadow-md object-contain">
+            <div>
+              <h2 class="text-xl font-semibold"><%= h.nome %></h2>
+              <p class="text-sm text-gray-400"><strong>Categoria:</strong> <%= h.categoria %></p>
+            </div>
+          </div>
+
+          <!-- Botões -->
+          <div class="flex gap-3">
+            <a href="/habilidades/editar/<%= h.id %>" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm">
+              Editar
+            </a>
+            <a href="/habilidades/deletar/<%= h.id %>" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm"
+              onclick="return confirm('Tem certeza que deseja deletar esta habilidade?')">
+              Deletar
+            </a>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  <% } %>
+
+</body>
+</html>
